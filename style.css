@@ -1,0 +1,16 @@
+button {
+    background-color: brown;
+    font-size: 20px;
+}
+
+.resources {
+    display: grid;
+    grid-template-rows: 25px 25px 25px 25px 25px 25px;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
+}
+
+.inventory {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
