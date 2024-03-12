@@ -118,11 +118,11 @@ $(document).ready(function(){
             state.autodirtPlus ++;
             state.autodirtPrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough dirt")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -132,11 +132,11 @@ $(document).ready(function(){
             state.autostonePlus++;
             state.autostonePrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough stone")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -146,11 +146,11 @@ $(document).ready(function(){
             state.autoironPlus++;
             state.autoironPrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough iron")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -160,11 +160,11 @@ $(document).ready(function(){
             state.autosilverPlus++;
             state.autosilverPrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough silver")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -174,11 +174,11 @@ $(document).ready(function(){
             state.autogoldPlus++;
             state.autogoldPrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough gold")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -188,11 +188,11 @@ $(document).ready(function(){
             state.autodiamondPlus++;
             state.autodiamondPrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough diamonds")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -202,11 +202,11 @@ $(document).ready(function(){
             state.dirtPlus++;
             state.dirtUPrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough dirt")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -216,11 +216,11 @@ $(document).ready(function(){
             state.stonePlus++;
             state.stoneUPrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough stone")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -230,11 +230,11 @@ $(document).ready(function(){
             state.ironPlus++;
             state.ironUPrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough iron")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -244,11 +244,11 @@ $(document).ready(function(){
             state.silverPlus++;
             state.silverUPrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough silver")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -258,11 +258,11 @@ $(document).ready(function(){
             state.goldPlus++;
             state.goldUPrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough gold")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -272,11 +272,11 @@ $(document).ready(function(){
             state.diamondPlus++;
             state.diamondUPrice *= 2;
             changeInventory();
-            changeMarket();}
+            changeUpgrade();}
         else{
             alert("Not enough diamonds")
             changeInventory();
-            changeMarket();
+            changeUpgrade();
         }
     });
     
@@ -285,7 +285,7 @@ $(document).ready(function(){
         state.stonePlus++;
         $("button").remove("#dirt2");
         changeInventory();
-        changeMarket();
+        changeUpgrade();
     });
     
     $("#stone2").click(function(){
@@ -293,7 +293,7 @@ $(document).ready(function(){
         state.ironPlus++;
         $("button").remove("#stone2");
         changeInventory();
-        changeMarket();
+        changeUpgrade();
     });
     
     $("#iron2").click(function(){
@@ -301,7 +301,7 @@ $(document).ready(function(){
         state.silverPlus++;
         $("button").remove("#iron2");
         changeInventory();
-        changeMarket();
+        changeUpgrade();
     });
     
     $("#silver2").click(function(){
@@ -309,7 +309,7 @@ $(document).ready(function(){
         state.goldPlus++;
         $("button").remove("#silver2");
         changeInventory();
-        changeMarket();
+        changeUpgrade();
     });
     
     $("#gold2").click(function(){
@@ -317,7 +317,7 @@ $(document).ready(function(){
         state.diamondPlus++;
         $("button").remove("#gold2");
         changeInventory();
-        changeMarket();
+        changeUpgrade();
     });
     
     $("#diamond2").click(function(){
@@ -325,7 +325,7 @@ $(document).ready(function(){
         state.diamondPlus++;
         $("button").remove("#diamond2");
         changeInventory();
-        changeMarket();
+        changeUpgrade();
     });
     
     function changeInventory(){
