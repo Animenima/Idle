@@ -39,6 +39,16 @@ $(document).ready(function(){
     
     
     };
+
+    var savegame = JSON.parse(localStorage.getItem("gameData"));
+
+    $("#save").click(function(){
+        localStorage.setItem("gameData", JSON.stringify(state))
+    });
+
+    $("#load").click(function(){
+            state = savegame
+    });
     
     setInterval(function(){
         state.dirt += state.autodirtPlus * state.dirtPlus;
