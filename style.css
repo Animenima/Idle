@@ -20,7 +20,7 @@ button {
 
 .resources {
     display: grid;
-    grid-template-columns: 16.6%;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
 }
 
 .resources h1 {
@@ -61,7 +61,7 @@ button {
 
 .auto {
     display: grid;
-    grid-template-columns: 16.6%;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
 }
 
 .auto h1 {
@@ -102,7 +102,7 @@ button {
 
 .upgrade {
     display: grid;
-    grid-template-columns: 16.6%;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
 }
 
 .upgrade h1 {
