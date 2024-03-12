@@ -41,37 +41,37 @@ $(document).ready(function(){
     };
     
     setInterval(function(){
-        state.dirt += state.autodirtPlus;
+        state.dirt += state.autodirtPlus * state.dirtPlus;
         changeInventory();
         changeUpgrade();
     }, 1000);
     
     setInterval(function(){
-        state.stone += state.autostonePlus;
+        state.stone += state.autostonePlus * state.stonePlus;
         changeInventory();
         changeUpgrade();
     }, 1000);
     
     setInterval(function(){
-        state.iron += state.autoironPlus;
+        state.iron += state.autoironPlus * state.ironPlus;
         changeInventory();
         changeUpgrade();
     }, 1000);
     
     setInterval(function(){
-        state.silver += state.autosilverPlus;
+        state.silver += state.autosilverPlus * state.silverPlus;
         changeInventory();
         changeUpgrade();
     }, 1000);
     
     setInterval(function(){
-        state.gold += state.autogoldPlus;
+        state.gold += state.autogoldPlus * state.goldPlus;
         changeInventory();
         changeUpgrade();
     }, 1000);
     
     setInterval(function(){
-        state.diamond += state.autodiamondPlus;
+        state.diamond += state.autodiamondPlus * state.diamondPlus;
         changeInventory();
         changeUpgrade();
     }, 1000);
