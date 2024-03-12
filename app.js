@@ -208,7 +208,7 @@ $(document).ready(function(){
             changeInventory();
             changeMarket();
         }
-    })
+    });
     
     $("#stone1").click(function(){
         if (state.stone >= state.stoneUPrice){
@@ -222,7 +222,7 @@ $(document).ready(function(){
             changeInventory();
             changeMarket();
         }
-    })
+    });
     
     $("#iron1").click(function(){
         if (state.iron >= state.ironUPrice){
@@ -236,7 +236,7 @@ $(document).ready(function(){
             changeInventory();
             changeMarket();
         }
-    })
+    });
     
     $("#silver1").click(function(){
         if (state.silver >= state.silverUPrice){
@@ -250,7 +250,7 @@ $(document).ready(function(){
             changeInventory();
             changeMarket();
         }
-    })
+    });
     
     $("#gold1").click(function(){
         if (state.gold >= state.goldUPrice){
@@ -264,7 +264,7 @@ $(document).ready(function(){
             changeInventory();
             changeMarket();
         }
-    })
+    });
     
     $("#diamond1").click(function(){
         if (state.diamond >= state.diamondUPrice){
@@ -278,7 +278,7 @@ $(document).ready(function(){
             changeInventory();
             changeMarket();
         }
-    })
+    });
     
     $("#dirt2").click(function(){
         state.dirt -= state.dirtU2Price;
@@ -286,7 +286,7 @@ $(document).ready(function(){
         $("button").remove("#dirt2");
         changeInventory();
         changeMarket();
-    })
+    });
     
     $("#stone2").click(function(){
         state.stone -= state.stoneU2Price;
@@ -294,7 +294,7 @@ $(document).ready(function(){
         $("button").remove("#stone2");
         changeInventory();
         changeMarket();
-    })
+    });
     
     $("#iron2").click(function(){
         state.iron -= state.ironU2Price;
@@ -302,7 +302,7 @@ $(document).ready(function(){
         $("button").remove("#iron2");
         changeInventory();
         changeMarket();
-    })
+    });
     
     $("#silver2").click(function(){
         state.silver -= state.silverU2Price;
@@ -310,7 +310,7 @@ $(document).ready(function(){
         $("button").remove("#silver2");
         changeInventory();
         changeMarket();
-    })
+    });
     
     $("#gold2").click(function(){
         state.gold -= state.goldU2Price;
@@ -318,7 +318,7 @@ $(document).ready(function(){
         $("button").remove("#gold2");
         changeInventory();
         changeMarket();
-    })
+    });
     
     $("#diamond2").click(function(){
         state.diamond -= state.diamondU2Price;
@@ -326,7 +326,7 @@ $(document).ready(function(){
         $("button").remove("#diamond2");
         changeInventory();
         changeMarket();
-    })
+    });
     
     function changeInventory(){
         $("#dirtc").html("Dirt: " + state.dirt);
@@ -453,14 +453,5 @@ $(document).ready(function(){
             $("#diamond2").css("display", "none");
         }
     };
-
-    var saveGameLoop = window.setInterval(function() {
-        localStorage.setItem("gameSave"), JSON.stringify(state))
-    }, 15000);
-
-    var savegame = JSON.parse(localStorage.getItem("gameSave"))
-        if (savegame !== null) {
-            state = savegame
-        };
     
     });
