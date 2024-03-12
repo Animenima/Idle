@@ -113,99 +113,171 @@ $(document).ready(function(){
     });
     
     $("#dirtauto").click(function(){
-        state.dirt -= state.autodirtPrice;
-        state.autodirtPlus ++;
-        state.autodirtPrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.dirt >= state.autodirtPrice){
+            state.dirt -= state.autodirtPrice;
+            state.autodirtPlus ++;
+            state.autodirtPrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough dirt")
+            changeInventory();
+            changeMarket();
+        }
     });
     
     $("#stoneauto").click(function(){
-        state.stone -= state.autostonePrice;
-        state.autostonePlus++;
-        state.autostonePrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.stone >= state.autostonePrice){
+            state.stone -= state.autostonePrice;
+            state.autostonePlus++;
+            state.autostonePrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough stone")
+            changeInventory();
+            changeMarket();
+        }
     });
     
     $("#ironauto").click(function(){
-        state.iron -= state.autoironPrice;
-        state.autoironPlus++;
-        state.autoironPrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.iron >= state.autoironPrice){
+            state.iron -= state.autoironPrice;
+            state.autoironPlus++;
+            state.autoironPrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough iron")
+            changeInventory();
+            changeMarket();
+        }
     });
     
     $("#silverauto").click(function(){
-        state.silver -= state.autosilverPrice;
-        state.autosilverPlus++;
-        state.autosilverPrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.silver >= state.autosilverPrice){
+            state.silver -= state.autosilverPrice;
+            state.autosilverPlus++;
+            state.autosilverPrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough silver")
+            changeInventory();
+            changeMarket();
+        }
     });
     
     $("#goldauto").click(function(){
-        state.gold -= state.autogoldPrice;
-        state.autogoldPlus++;
-        state.autogoldPrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.gold >= state.autogoldPrice){
+            state.gold -= state.autogoldPrice;
+            state.autogoldPlus++;
+            state.autogoldPrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough gold")
+            changeInventory();
+            changeMarket();
+        }
     });
     
     $("#diamondauto").click(function(){
-        state.diamond -= state.autodiamondPrice;
-        state.autodiamondPlus++;
-        state.autodiamondPrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.diamond >= state.autodiamondPrice){
+            state.diamond -= state.autodiamondPrice;
+            state.autodiamondPlus++;
+            state.autodiamondPrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough diamonds")
+            changeInventory();
+            changeMarket();
+        }
     });
     
     $("#dirt1").click(function(){
-        state.dirt -= state.dirtUPrice;
-        state.dirtPlus++;
-        state.dirtUPrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.dirt >= state.dirtUPrice){
+            state.dirt -= state.dirtUPrice;
+            state.dirtPlus++;
+            state.dirtUPrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough dirt")
+            changeInventory();
+            changeMarket();
+        }
     })
     
     $("#stone1").click(function(){
-        state.stone -= state.stoneUPrice;
-        state.stonePlus++;
-        state.stoneUPrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.stone >= state.stoneUPrice){
+            state.stone -= state.stoneUPrice;
+            state.stonePlus++;
+            state.stoneUPrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough stone")
+            changeInventory();
+            changeMarket();
+        }
     })
     
     $("#iron1").click(function(){
-        state.iron -= state.ironUPrice;
-        state.ironPlus++;
-        state.ironUPrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.iron >= state.ironUPrice){
+            state.iron -= state.ironUPrice;
+            state.ironPlus++;
+            state.ironUPrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough iron")
+            changeInventory();
+            changeMarket();
+        }
     })
     
     $("#silver1").click(function(){
-        state.silver -= state.silverUPrice;
-        state.silverPlus++;
-        state.silverUPrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.silver >= state.silverUPrice){
+            state.silver -= state.silverUPrice;
+            state.silverPlus++;
+            state.silverUPrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough silver")
+            changeInventory();
+            changeMarket();
+        }
     })
     
     $("#gold1").click(function(){
-        state.gold -= state.goldUPrice;
-        state.goldPlus++;
-        state.goldUPrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.gold >= state.goldUPrice){
+            state.gold -= state.goldUPrice;
+            state.goldPlus++;
+            state.goldUPrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough gold")
+            changeInventory();
+            changeMarket();
+        }
     })
     
     $("#diamond1").click(function(){
-        state.diamond -= state.diamondUPrice;
-        state.diamondPlus++;
-        state.diamondUPrice *= 2;
-        changeInventory();
-        changeMarket();
+        if (state.diamond >= state.diamondUPrice){
+            state.diamond -= state.diamondUPrice;
+            state.diamondPlus++;
+            state.diamondUPrice *= 2;
+            changeInventory();
+            changeMarket();}
+        else{
+            alert("Not enough diamonds")
+            changeInventory();
+            changeMarket();
+        }
     })
     
     $("#dirt2").click(function(){
