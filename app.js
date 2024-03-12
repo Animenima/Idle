@@ -336,12 +336,12 @@ $(document).ready(function(){
         $("#goldc").html("Gold: " + state.gold);
         $("#diamondc").html("Diamond: " + state.diamond);
     
-        $("#dirtautoc").html("Dirt Auto: " + state.autodirtPlus);
-        $("#stoneautoc").html("Stone Auto: " + state.autostonePlus);
-        $("#ironautoc").html("Iron Auto: " + state.autoironPlus);
-        $("#silverautoc").html("Silver Auto: " + state.autosilverPlus);
-        $("#goldautoc").html("Gold Auto: " + state.autogoldPlus);
-        $("#diamondauoc").html("Diamond Auto: " + state.autodiamondPlus);
+        $("#dirtautoc").html("Dirt Per Second: " + state.autodirtPlus * state.dirtPlus);
+        $("#stoneautoc").html("Stone Per Second: " + state.autostonePlus * state.stonePlus);
+        $("#ironautoc").html("Iron Per Second: " + state.autoironPlus * state.ironPlus);
+        $("#silverautoc").html("Silver Per Second: " + state.autosilverPlus * state.silverPlus);
+        $("#goldautoc").html("Gold Per Second: " + state.autogoldPlus * state.goldPlus);
+        $("#diamondauoc").html("Diamond Per Second: " + state.autodiamondPlus * state.diamondPlus);
     };
     
     function changeUpgrade(){
