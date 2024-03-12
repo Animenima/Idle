@@ -341,7 +341,7 @@ $(document).ready(function(){
         $("#ironautoc").html("Iron Per Second: " + state.autoironPlus * state.ironPlus);
         $("#silverautoc").html("Silver Per Second: " + state.autosilverPlus * state.silverPlus);
         $("#goldautoc").html("Gold Per Second: " + state.autogoldPlus * state.goldPlus);
-        $("#diamondauoc").html("Diamond Per Second: " + state.autodiamondPlus * state.diamondPlus);
+        $("#diamondatuoc").html("Diamond Per Second: " + state.autodiamondPlus * state.diamondPlus);
     };
     
     function changeUpgrade(){
