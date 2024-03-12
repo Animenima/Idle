@@ -39,6 +39,15 @@ $(document).ready(function(){
     
     
     };
+
+    var saveGameLoop = window.setInterval(function() {
+        localStorage.setItem("gameSave"), JSON.stringify(state))
+    }, 15000)
+
+    var savegame = JSON.parse(localStorage.getItem("gameSave"))
+        if (savegame !== null) {
+            state = savegame
+        }
     
     setInterval(function(){
         state.dirt += state.autodirtPlus;
