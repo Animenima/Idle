@@ -39,15 +39,6 @@ $(document).ready(function(){
     
     
     };
-
-    var saveGameLoop = window.setInterval(function() {
-        localStorage.setItem("gameSave"), JSON.stringify(state))
-    }, 15000);
-
-    var savegame = JSON.parse(localStorage.getItem("gameSave"))
-        if (savegame !== null) {
-            state = savegame
-        };
     
     setInterval(function(){
         state.dirt += state.autodirtPlus;
@@ -351,7 +342,7 @@ $(document).ready(function(){
         $("#silverautoc").html("Silver Auto: " + state.autosilverPlus);
         $("#goldautoc").html("Gold Auto: " + state.autogoldPlus);
         $("#diamondauoc").html("Diamond Auto: " + state.autodiamondPlus);
-    }
+    };
     
     function changeUpgrade(){
         if(state.dirt >= state.autodirtPrice){
@@ -461,6 +452,15 @@ $(document).ready(function(){
         }else{
             $("#diamond2").css("display", "none");
         }
-    }
+    };
+
+    var saveGameLoop = window.setInterval(function() {
+        localStorage.setItem("gameSave"), JSON.stringify(state))
+    }, 15000);
+
+    var savegame = JSON.parse(localStorage.getItem("gameSave"))
+        if (savegame !== null) {
+            state = savegame
+        };
     
     });
