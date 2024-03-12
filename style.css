@@ -10,6 +10,14 @@ button {
     color: gray;
 }
 
+.auto button {
+    display: none;
+}
+
+.upgrade button {
+    display: none;
+}
+
 .resources {
     display: grid;
     grid-template-columns: 16.6%;
