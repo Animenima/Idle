@@ -1,4 +1,47 @@
 $(document).ready(function(){
+    var defaultstate = {
+        dirt: 0,
+        stone: 0,
+        iron: 0,
+        silver: 0,
+        gold: 0,
+        diamond: 0,
+        dirtPlus: 1,
+        stonePlus: 0,
+        ironPlus: 0,
+        silverPlus: 0,
+        goldPlus: 0,
+        diamondPlus: 0,
+        autodirtPlus: 0,
+        autostonePlus: 0,
+        autoironPlus: 0,
+        autosilverPlus: 0,
+        autogoldPlus: 0,
+        autodiamondPlus: 0,
+        autodirtPrice: 10,
+        autostonePrice: 10,
+        autoironPrice: 10,
+        autosilverPrice: 10,
+        autogoldPrice: 10,
+        autodiamondPrice: 10,
+        dirtUPrice: 100,
+        stoneUPrice: 100,
+        ironUPrice: 100,
+        silverUPrice: 100,
+        goldUPrice: 100,
+        diamondUPrice: 100,
+        dirtU2Price: 1000,
+        stoneU2Price: 1000,
+        ironU2Price: 1000,
+        silverU2Price: 1000,
+        goldU2Price: 1000,
+        diamondU2Price: 1000,
+    
+    
+    };
+    
+    
+    
     var state = {
         dirt: 0,
         stone: 0,
@@ -332,7 +375,15 @@ $(document).ready(function(){
     
     $("#diamond2").click(function(){
         state.diamond -= state.diamondU2Price;
-        state.diamondPlus++;
+    //Resets all resources    
+        state = defaultstate;
+    //Increases all production by 2
+        state.dirtPlus *= 2;
+        state.stonePlus *= 2;
+        state.ironPlus *= 2;
+        state.silverPlus *= 2;
+        state.goldPlus *= 2;
+        state.diamondPlus *= 2;
         $("button").remove("#diamond2");
         changeInventory();
         changeUpgrade();
