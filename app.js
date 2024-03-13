@@ -356,111 +356,111 @@ $(document).ready(function(){
     
     function changeUpgrade(){
         if(state.dirt >= state.autodirtPrice){
-            $("#dirtauto").css("display", "grid");    
+            $("#dirtauto").removeClass("invisible");   
         }else{
-            $("#dirtauto").css("display", "none");
+            $("#dirtauto").addClass("invisible");
         }
     
         if(state.stone >= state.autostonePrice){
-            $("#stoneauto").css("display", "grid");    
+            $("#stoneauto").removeClass("invisible");   
         }else{
-            $("#stoneauto").css("display", "none");
+            $("#stoneauto").addClass("invisible");
         }
     
         if(state.iron >= state.autoironPrice){
-            $("#ironauto").css("display", "grid");    
+            $("#ironauto").removeClass("invisible");   
         }else{
-            $("#ironauto").css("display", "none");
+            $("#ironauto").addClass("invisible");
         }
     
         if(state.silver >= state.autosilverPrice){
-            $("#silverauto").css("display", "grid");    
+            $("#silverauto").removeClass("invisible");   
         }else{
-            $("#silverauto").css("display", "none");
+            $("#silverauto").addClass("invisible");
         }
     
         if(state.gold >= state.autogoldPrice){
-            $("#goldauto").css("display", "grid");    
+            $("#goldauto").removeClass("invisible");   
         }else{
-            $("#goldauto").css("display", "none");
+            $("#goldauto").addClass("invisible");
         }
     
         if(state.diamond >= state.autodiamondPrice){
-            $("#diamondauto").css("display", "grid");    
+            $("#diamondauto").removeClass("invisible");   
         }else{
-            $("#diamondauto").css("display", "none");
+            $("#diamondauto").addClass("invisible");
         }
     
         if(state.dirt >= state.dirtUPrice){
-            $("#dirt1").css("display", "grid");    
+            $("#dirt1").removeClass("invisible");   
         }else{
-            $("#dirt1").css("display", "none");
+            $("#dirt1").addClass("invisible");
         }
     
         if(state.stone >= state.stoneUPrice){
-            $("#stone1").css("display", "grid");    
+            $("#stone1").removeClass("invisible");   
         }else{
-            $("#stone1").css("display", "none");
+            $("#stone1").addClass("invisible");
         }
     
         if(state.iron >= state.ironUPrice){
-            $("#iron1").css("display", "grid");    
+            $("#iron1").removeClass("invisible");   
         }else{
-            $("#iron1").css("display", "none");
+            $("#iron1").addClass("invisible");
         }
     
         if(state.silver >= state.silverUPrice){
-            $("#silver1").css("display", "grid");    
+            $("#silver1").removeClass("invisible");   
         }else{
-            $("#silver1").css("display", "none");
+            $("#silver1").addClass("invisible");
         }
     
         if(state.gold >= state.goldUPrice){
-            $("#gold1").css("display", "grid");    
+            $("#gold1").removeClass("invisible");   
         }else{
-            $("#gold1").css("display", "none");
+            $("#gold1").addClass("invisible");
         }
     
         if(state.diamond >= state.diamondUPrice){
-            $("#diamond1").css("display", "grid");    
+            $("#diamond1").removeClass("invisible");   
         }else{
-            $("#diamond1").css("display", "none");
+            $("#diamond1").addClass("invisible");
         }
     
         if(state.dirt >= state.dirtU2Price){
-            $("#dirt2").css("display", "grid");    
+            $("#dirt2").removeClass("invisible");   
         }else{
-            $("#dirt2").css("display", "none");
+            $("#dirt2").addClass("invisible");
         }
     
         if(state.stone >= state.stoneU2Price){
-            $("#stone2").css("display", "grid");    
+            $("#stone2").removeClass("invisible");   
         }else{
-            $("#stone2").css("display", "none");
+            $("#stone2").addClass("invisible");
         }
     
         if(state.iron >= state.ironU2Price){
-            $("#iron2").css("display", "grid");    
+            $("#iron2").removeClass("invisible");   
         }else{
-            $("#iron2").css("display", "none");
+            $("#iron2").addClass("invisible");
         }
     
         if(state.silver >= state.silverU2Price){
-            $("#silver2").css("display", "grid");    
+            $("#silver2").removeClass("invisible");   
         }else{
-            $("#silver2").css("display", "none");
+            $("#silver2").addClass("invisible");
         }
     
         if(state.gold >= state.goldU2Price){
-            $("#gold2").css("display", "grid");    
+            $("#gold2").removeClass("invisible");   
         }else{
-            $("#gold2").css("display", "none");
+            $("#gold2").addClass("invisible");
         }
     
         if(state.diamond >= state.diamondU2Price){
-            $("#diamond2").css("display", "grid");    
+            $("#diamond2").removeClass("invisible");   
         }else{
-            $("#diamond2").css("display", "none");
+            $("#diamond2").addClass("invisible");
         }
     };
     
