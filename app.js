@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    var game = new Phaser.Game();
     var state = {
         dirt: 0,
         stone: 0,
