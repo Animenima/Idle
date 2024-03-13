@@ -36,6 +36,7 @@ $(document).ready(function(){
         silverU2Price: 1000,
         goldU2Price: 1000,
         diamondU2Price: 1000,
+        diamondU2RPrice: 2000,
     
     
     };
@@ -79,6 +80,7 @@ $(document).ready(function(){
         silverU2Price: 1000,
         goldU2Price: 1000,
         diamondU2Price: 1000,
+        diamondU2RPrice: 2000,
     
     
     };
@@ -336,7 +338,7 @@ $(document).ready(function(){
     $("#dirt2").click(function(){
         state.dirt -= state.dirtU2Price;
         state.stonePlus++;
-        $("button").remove("#dirt2");
+        $("#dirt2").addClass("d-none");
         changeInventory();
         changeUpgrade();
     });
@@ -374,19 +376,46 @@ $(document).ready(function(){
     });
     
     $("#diamond2").click(function(){
-        state.diamond -= state.diamondU2Price;
+        if (state.diamond >= state.diamondU2Price){
+    //Increases all production by 2
+        defaultstate.dirtPlus += 1;
+        defaultstate.stonePlus += 2;
+        defaultstate.ironPlus += 2;
+        defaultstate.silverPlus += 2;
+        defaultstate.goldPlus += 2;
+        defaultstate.diamondPlus += 2;
     //Resets all resources    
         state = defaultstate;
-    //Increases all production by 2
-        state.dirtPlus *= 2;
-        state.stonePlus *= 2;
-        state.ironPlus *= 2;
-        state.silverPlus *= 2;
-        state.goldPlus *= 2;
-        state.diamondPlus *= 2;
-        $("button").remove("#diamond2");
         changeInventory();
         changeUpgrade();
+        }
+        else {
+            alert("Not enough diamonds")
+            changeInventory();
+            changeUpgrade();
+        }
+    });
+
+    $("#diamond2r").click(function(){
+        if (state.diamond >= state.diamondU2RPrice){
+    //Increases all production by 2 after first reset        
+            defaultstate.dirtPlus *= 2;
+            defaultstate.stonePlus *= 2;
+            defaultstate.ironPlus *= 2;
+            defaultstate.silverPlus *= 2;
+            defaultstate.goldPlus *= 2;
+            defaultstate.diamondPlus *= 2;
+            defaultstate.diamondU2RPrice *= 2;
+    //Resets all resources after first reset
+            state = defaultstate;
+            changeInventory();
+            changeUpgrade();
+        }   
+        else {    
+            alert("Not enough diamonds")
+            changeInventory();
+            changeUpgrade();
+        }
     });
     
     function changeInventory(){
@@ -513,6 +542,13 @@ $(document).ready(function(){
         }else{
             $("#diamond2").addClass("invisible");
         }
+
+        if(state.diamond >= state.diamondU2RPrice){
+            $("#diamond2").removeClass("d-none");   
+        }else{
+            $("#diamond2").addClass("invisible");
+        }
+        
     };
     
     });
