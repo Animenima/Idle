@@ -495,6 +495,8 @@ $(document).ready(function(){
         $("#silverautoc").html("Silver Per Second: " + state.autosilverPlus * (state.silverPlus * state.reset));
         $("#goldautoc").html("Gold Per Second: " + state.autogoldPlus * (state.goldPlus * state.reset));
         $("#diamondautoc").html("Diamond Per Second: " + state.autodiamondPlus * (state.diamondPlus * state.reset));
+
+        $("#resetc").html("Reset Multiplier: " + state.reset);
     };
     
     function changeUpgrade(){
@@ -576,30 +578,39 @@ $(document).ready(function(){
             $("#stone").addClass("invisible");
         }else{
             $("#stone").removeClass("invisible");
+            $("#dirt2").addClass("invisible");
         }
 
         if(state.ironunlock <= 0){
             $("#iron").addClass("invisible");
         }else{
             $("#iron").removeClass("invisible");
+            $("#stone2").addClass("invisible");
         }
 
         if(state.silverunlock <= 0){
             $("#silver").addClass("invisible");
         }else{
             $("#silver").removeClass("invisible");
+            $("#iron2").addClass("invisible");
         }
 
         if(state.goldunlock <= 0){
             $("#gold").addClass("invisible");
         }else{
             $("#gold").removeClass("invisible");
+            $("#silver2").addClass("invisible");
         }
         
         if(state.diamondunlock <= 0){
             $("#diamond").addClass("invisible");
         }else{
             $("#diamond").removeClass("invisible");
+            $("#gold2").addClass("invisible");
+        }
+
+        if(state.reset > 1){
+            $("#resetc").removeClass("invisible");
         }
 
     };
