@@ -402,7 +402,7 @@ $(document).ready(function(){
     });
     
     $("#diamond2").click(function(){
-        
+        if (state.diamond >= state.diamondU2Price){
             state.diamond -= state.diamondU2Price;  
         //Resets unlocks
             $("#dirt2").removeClass("invisible");
@@ -455,8 +455,12 @@ $(document).ready(function(){
         //Increases all production by 2
             state.reset *= 2
             changeInventory();
+            changeUpgrade();}
+        else{
+            alert("Not enough diamond")
+            changeInventory();
             changeUpgrade();
-
+        }
         
     });
     
