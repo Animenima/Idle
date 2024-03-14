@@ -440,6 +440,11 @@ $(document).ready(function(){
             state.silverPlus = defaultstate.silverPlus;
             state.goldPlus = defaultstate.goldPlus;
             state.diamondPlus = defaultstate.diamondPlus;
+            state.stoneunlock = defaultstate.stoneunlock;
+            state.ironunlock = defaultstate.ironunlock;
+            state.silverunlock = defaultstate.silverunlock;
+            state.goldunlock = defaultstate.goldunlock;
+            state.diamondunlock = defaultstate.diamondunlock;
             state.autodirtPlus = defaultstate.autodirtPlus;
             state.autostonePlus = defaultstate.autostonePlus;
             state.autoironPlus = defaultstate.autoironPlus;
