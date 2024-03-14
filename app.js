@@ -500,7 +500,20 @@ $(document).ready(function(){
         $("#diamondautoc").html("Diamond Per Second: " + state.autodiamondPlus * (state.diamondPlus * state.reset));
 
         $("#resetc").html("Reset Multiplier: " + state.reset);
+        //tooltip stuff
         $("#diamond2").attr("title", state.diamondU2Price + " Diamond").tooltip('_fixTitle');
+        $("#dirtauto").attr("title", state.autodirtPrice + " Dirt").tooltip('_fixTitle');
+        $("#stoneauto").attr("title", state.autostonePrice + " Stone").tooltip('_fixTitle');
+        $("#ironauto").attr("title", state.autoironPrice + " Iron").tooltip('_fixTitle');
+        $("#silverauto").attr("title", state.autosilverPrice + " Silver").tooltip('_fixTitle');
+        $("#goldauto").attr("title", state.autogoldPrice + " Gold").tooltip('_fixTitle');
+        $("#diamondauto").attr("title", state.autodiamondPrice + " Diamond").tooltip('_fixTitle');
+        $("#dirt1").attr("title", state.dirtUPrice + " Dirt").tooltip('_fixTitle');
+        $("#stone1").attr("title", state.stoneUPrice + " Stone").tooltip('_fixTitle');
+        $("#iron1").attr("title", state.ironUPrice + " Iron").tooltip('_fixTitle');
+        $("#silver1").attr("title", state.silverUPrice + " Silver").tooltip('_fixTitle');
+        $("#gold1").attr("title", state.goldUPrice + " Gold").tooltip('_fixTitle');
+        $("#diamond1").attr("title", state.diamondUPrice + " Diamond").tooltip('_fixTitle');
     };
     
     function changeUpgrade(){
