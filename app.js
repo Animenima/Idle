@@ -84,11 +84,13 @@ $(document).ready(function(){
     $("#save").click(function(){
         localStorage.setItem("gameData", JSON.stringify(state))
     });
-
-    var savegame = JSON.parse(localStorage.getItem("gameData"));
     
     $("#load").click(function(){
-            state = savegame
+        var savegame = JSON.parse(localStorage.getItem("gameData"));
+            state = savegame;
+            changeInventory();
+            changeUpgrade();
+            console.log(state);
     });
     
     setInterval(function(){
