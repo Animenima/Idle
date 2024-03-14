@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+     
     const defaultstate = {
         dirt: 0,
         stone: 0,
@@ -497,6 +500,7 @@ $(document).ready(function(){
         $("#diamondautoc").html("Diamond Per Second: " + state.autodiamondPlus * (state.diamondPlus * state.reset));
 
         $("#resetc").html("Reset Multiplier: " + state.reset);
+        $("#diamond2").attr("title", state.diamondU2Price + " Diamond").tooltip('_fixTitle');
     };
     
     function changeUpgrade(){
@@ -572,8 +576,6 @@ $(document).ready(function(){
             $("#diamond1").addClass("invisible");
         }
 
-        $("#diamond2").html("Reset for x2 <br>" + state.diamondU2Price + " Diamond");
-
         if(state.stoneunlock <= 0){
             $("#stone").addClass("invisible");
         }else{
@@ -612,6 +614,7 @@ $(document).ready(function(){
         if(state.reset > 1){
             $("#resetc").removeClass("invisible");
         }
+
 
     };
     
