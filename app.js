@@ -270,7 +270,7 @@ $(document).ready(function(){
     $("#dirt1").click(function(){
         if (state.dirt >= state.dirtUPrice){
             state.dirt -= state.dirtUPrice;
-            state.dirtPlus++;
+            state.dirtPlus *= 2;
             state.dirtUPrice *= 2;
             changeInventory();
             changeUpgrade();}
@@ -284,7 +284,7 @@ $(document).ready(function(){
     $("#stone1").click(function(){
         if (state.stone >= state.stoneUPrice){
             state.stone -= state.stoneUPrice;
-            state.stonePlus++;
+            state.stonePlus *= 2;
             state.stoneUPrice *= 2;
             changeInventory();
             changeUpgrade();}
@@ -298,7 +298,7 @@ $(document).ready(function(){
     $("#iron1").click(function(){
         if (state.iron >= state.ironUPrice){
             state.iron -= state.ironUPrice;
-            state.ironPlus++;
+            state.ironPlus *= 2;
             state.ironUPrice *= 2;
             changeInventory();
             changeUpgrade();}
@@ -312,7 +312,7 @@ $(document).ready(function(){
     $("#silver1").click(function(){
         if (state.silver >= state.silverUPrice){
             state.silver -= state.silverUPrice;
-            state.silverPlus++;
+            state.silverPlus *= 2;
             state.silverUPrice *= 2;
             changeInventory();
             changeUpgrade();}
@@ -326,7 +326,7 @@ $(document).ready(function(){
     $("#gold1").click(function(){
         if (state.gold >= state.goldUPrice){
             state.gold -= state.goldUPrice;
-            state.goldPlus++;
+            state.goldPlus *= 2;
             state.goldUPrice *= 2;
             changeInventory();
             changeUpgrade();}
@@ -340,7 +340,7 @@ $(document).ready(function(){
     $("#diamond1").click(function(){
         if (state.diamond >= state.diamondUPrice){
             state.diamond -= state.diamondUPrice;
-            state.diamondPlus++;
+            state.diamondPlus *= 2;
             state.diamondUPrice *= 2;
             changeInventory();
             changeUpgrade();}
