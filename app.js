@@ -188,8 +188,10 @@ $(document).ready(function(){
             state.dirt -= state.autodirtPrice;
             state.autodirtPlus ++;
             state.autodirtPrice *= 2;
+            $("#dirtauto").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#dirtauto").tooltip("show");}
         else{
             alert("Not enough dirt")
             changeInventory();
@@ -202,8 +204,10 @@ $(document).ready(function(){
             state.stone -= state.autostonePrice;
             state.autostonePlus ++;
             state.autostonePrice *= 2;
+            $("#stoneauto").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#stoneauto").tooltip("show");}
         else{
             alert("Not enough stone")
             changeInventory();
@@ -216,8 +220,10 @@ $(document).ready(function(){
             state.iron -= state.autoironPrice;
             state.autoironPlus ++;
             state.autoironPrice *= 2;
+            $("#ironauto").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#ironauto").tooltip("show");}
         else{
             alert("Not enough iron")
             changeInventory();
@@ -230,8 +236,10 @@ $(document).ready(function(){
             state.silver -= state.autosilverPrice;
             state.autosilverPlus ++;
             state.autosilverPrice *= 2;
+            $("#silverauto").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#silverauto").tooltip("show");}
         else{
             alert("Not enough silver")
             changeInventory();
@@ -244,8 +252,10 @@ $(document).ready(function(){
             state.gold -= state.autogoldPrice;
             state.autogoldPlus ++;
             state.autogoldPrice *= 2;
+            $("#goldauto").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#goldauto").tooltip("show");}
         else{
             alert("Not enough gold")
             changeInventory();
@@ -258,8 +268,10 @@ $(document).ready(function(){
             state.diamond -= state.autodiamondPrice;
             state.autodiamondPlus ++;
             state.autodiamondPrice *= 2;
+            $("#diamonauto").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#diamondauto").tooltip("show");}
         else{
             alert("Not enough diamonds")
             changeInventory();
@@ -272,8 +284,10 @@ $(document).ready(function(){
             state.dirt -= state.dirtUPrice;
             state.dirtPlus *= 2;
             state.dirtUPrice *= 2;
+            $("#dirt1").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#dirt1").tooltip("show");}
         else{
             alert("Not enough dirt")
             changeInventory();
@@ -286,8 +300,10 @@ $(document).ready(function(){
             state.stone -= state.stoneUPrice;
             state.stonePlus *= 2;
             state.stoneUPrice *= 2;
+            $("#stone1").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#stone1").tooltip("show");}
         else{
             alert("Not enough stone")
             changeInventory();
@@ -300,8 +316,10 @@ $(document).ready(function(){
             state.iron -= state.ironUPrice;
             state.ironPlus *= 2;
             state.ironUPrice *= 2;
+            $("#iron1").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#iron1").tooltip("show");}
         else{
             alert("Not enough iron")
             changeInventory();
@@ -314,8 +332,10 @@ $(document).ready(function(){
             state.silver -= state.silverUPrice;
             state.silverPlus *= 2;
             state.silverUPrice *= 2;
+            $("#silver1").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#silver1").tooltip("show");}
         else{
             alert("Not enough silver")
             changeInventory();
@@ -328,8 +348,10 @@ $(document).ready(function(){
             state.gold -= state.goldUPrice;
             state.goldPlus *= 2;
             state.goldUPrice *= 2;
+            $("#gold1").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#gold1").tooltip("show");}
         else{
             alert("Not enough gold")
             changeInventory();
@@ -342,8 +364,10 @@ $(document).ready(function(){
             state.diamond -= state.diamondUPrice;
             state.diamondPlus *= 2;
             state.diamondUPrice *= 2;
+            $("#diamond1").tooltip("dispose");
             changeInventory();
-            changeUpgrade();}
+            changeUpgrade();
+            $("#diamond1").tooltip("show");}
         else{
             alert("Not enough diamonds")
             changeInventory();
