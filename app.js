@@ -6,6 +6,8 @@ $(document).ready(function(){
             trigger : 'hover'
         });
     })
+
+    var savegame = JSON.parse(localStorage.getItem("gameData"));
      
     const defaultstate = {
         dirt: 0,
@@ -104,11 +106,18 @@ $(document).ready(function(){
     });
     
     $("#load").click(function(){
-        var savegame = JSON.parse(localStorage.getItem("gameData"));
+        if (savegame !== null){
             state = savegame;
             changeInventory();
             changeUpgrade();
-            console.log(state);
+        }else{
+            alert("You have not saved yet!");
+        }
+    });
+
+    $("#clear").click(function(){
+        localStorage.removeItem("gameData");
+        savegame = null;
     });
     
     setInterval(function(){
