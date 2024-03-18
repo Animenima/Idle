@@ -561,6 +561,91 @@ $(document).ready(function () {
         }
     });
 
+    $("#stone3").click(function () {
+        if (state.stone >= state.stoneU3Price) {
+            state.stone -= state.stoneU3Price;
+            state.stoneMPlus *= 2;
+            state.stoneU3Price **= 2;
+            $("#stone3").tooltip("dispose");
+            changeInventory();
+            changeUpgrade();
+            $("#stone3").tooltip("show");
+        }
+        else {
+            alert("Not enough dirt")
+            changeInventory();
+            changeUpgrade();
+        }
+    });
+
+    $("#dirt3").click(function () {
+        if (state.dirt >= state.dirtU3Price) {
+            state.dirt -= state.dirtU3Price;
+            state.dirtMPlus *= 2;
+            state.dirtU3Price **= 2;
+            $("#dirt3").tooltip("dispose");
+            changeInventory();
+            changeUpgrade();
+            $("#dirt3").tooltip("show");
+        }
+        else {
+            alert("Not enough dirt")
+            changeInventory();
+            changeUpgrade();
+        }
+    });
+
+    $("#dirt3").click(function () {
+        if (state.dirt >= state.dirtU3Price) {
+            state.dirt -= state.dirtU3Price;
+            state.dirtMPlus *= 2;
+            state.dirtU3Price **= 2;
+            $("#dirt3").tooltip("dispose");
+            changeInventory();
+            changeUpgrade();
+            $("#dirt3").tooltip("show");
+        }
+        else {
+            alert("Not enough dirt")
+            changeInventory();
+            changeUpgrade();
+        }
+    });
+
+    $("#dirt3").click(function () {
+        if (state.dirt >= state.dirtU3Price) {
+            state.dirt -= state.dirtU3Price;
+            state.dirtMPlus *= 2;
+            state.dirtU3Price **= 2;
+            $("#dirt3").tooltip("dispose");
+            changeInventory();
+            changeUpgrade();
+            $("#dirt3").tooltip("show");
+        }
+        else {
+            alert("Not enough dirt")
+            changeInventory();
+            changeUpgrade();
+        }
+    });
+
+    $("#dirt3").click(function () {
+        if (state.dirt >= state.dirtU3Price) {
+            state.dirt -= state.dirtU3Price;
+            state.dirtMPlus *= 2;
+            state.dirtU3Price **= 2;
+            $("#dirt3").tooltip("dispose");
+            changeInventory();
+            changeUpgrade();
+            $("#dirt3").tooltip("show");
+        }
+        else {
+            alert("Not enough dirt")
+            changeInventory();
+            changeUpgrade();
+        }
+    });
+
     function changeInventory() {
         $("#dirtc").html("Dirt: " + state.dirt);
         $("#stonec").html("Stone: " + state.stone);
@@ -746,6 +831,36 @@ $(document).ready(function () {
             $("#dirt3").removeClass("invisible");
         } else {
             $("#dirt3").addClass("invisible");
+        }
+
+        if (state.stone > state.stoneU3Price) {
+            $("#stone3").removeClass("invisible");
+        } else {
+            $("#stone3").addClass("invisible");
+        }
+
+        if (state.iron > state.ironU3Price) {
+            $("#iron3").removeClass("invisible");
+        } else {
+            $("#iron3").addClass("invisible");
+        }
+
+        if (state.silver > state.silverU3Price) {
+            $("#silver3").removeClass("invisible");
+        } else {
+            $("#silver3").addClass("invisible");
+        }
+
+        if (state.gold > state.goldU3Price) {
+            $("#gold3").removeClass("invisible");
+        } else {
+            $("#gold3").addClass("invisible");
+        }
+
+        if (state.diamond > state.diamondU3Price) {
+            $("#diamond3").removeClass("invisible");
+        } else {
+            $("#diamond3").addClass("invisible");
         }
 
 
