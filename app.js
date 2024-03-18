@@ -680,6 +680,42 @@ $(document).ready(function () {
             $("#gold2").addClass("invisible");
         }
 
+        if (state.dirt >= state.dirtU2Price) {
+            $("#dirt2").removeClass("invisible");
+        } else {
+            $("#dirt2").addClass("invisible");
+        }
+
+        if (state.stone >= state.stoneU2Price) {
+            $("#stone2").removeClass("invisible");
+        } else {
+            $("#stone2").addClass("invisible");
+        }
+
+        if (state.iron >= state.ironU2Price) {
+            $("#iron2").removeClass("invisible");
+        } else {
+            $("#iron2").addClass("invisible");
+        }
+
+        if (state.silver >= state.silverU2Price) {
+            $("#silver2").removeClass("invisible");
+        } else {
+            $("#silver2").addClass("invisible");
+        }
+
+        if (state.gold >= state.goldU2Price) {
+            $("#gold2").removeClass("invisible");
+        } else {
+            $("#gold2").addClass("invisible");
+        }
+
+        if (state.diamond >= state.diamondU2Price) {
+            $("#diamond2").removeClass("invisible");
+        } else {
+            $("#diamond2").addClass("invisible");
+        }
+
         if (state.reset > 1) {
             $("#resetc").removeClass("invisible");
         }
