@@ -53,6 +53,16 @@ $(document).ready(function () {
         diamondU2Price: 1000,
         dirtU3Price: 10000,
         dirtMPlus: 1,
+        stoneU3Price: 10000,
+        stoneMPlus: 1,
+        ironU3Price: 10000,
+        ironMPlus: 1,
+        silverU3Price: 10000,
+        silverMPlus: 1,
+        goldU3Price: 10000,
+        goldMPlus: 1,
+        diamondU3Price: 10000,
+        diamondMPlus: 1,
         reset: 1,
     };
 
@@ -102,6 +112,16 @@ $(document).ready(function () {
         diamondU2Price: 1000,
         dirtU3Price: 10000,
         dirtMPlus: 1,
+        stoneU3Price: 10000,
+        stoneMPlus: 1,
+        ironU3Price: 10000,
+        ironMPlus: 1,
+        silverU3Price: 10000,
+        silverMPlus: 1,
+        goldU3Price: 10000,
+        goldMPlus: 1,
+        diamondU3Price: 10000,
+        diamondMPlus: 1,
         reset: 1,
     };
 
@@ -131,31 +151,31 @@ $(document).ready(function () {
     }, 1000);
 
     setInterval(function () {
-        state.stone += state.autostonePlus * (state.stonePlus * state.reset);
+        state.stone += state.autostonePlus * (state.stonePlus * state.reset * state.stoneMPlus);
         changeInventory();
         changeUpgrade();
     }, 1000);
 
     setInterval(function () {
-        state.iron += state.autoironPlus * (state.ironPlus * state.reset);
+        state.iron += state.autoironPlus * (state.ironPlus * state.reset * state.ironMPlus);
         changeInventory();
         changeUpgrade();
     }, 1000);
 
     setInterval(function () {
-        state.silver += state.autosilverPlus * (state.silverPlus * state.reset);
+        state.silver += state.autosilverPlus * (state.silverPlus * state.reset * state.silverMPlus);
         changeInventory();
         changeUpgrade();
     }, 1000);
 
     setInterval(function () {
-        state.gold += state.autogoldPlus * (state.goldPlus * state.reset);
+        state.gold += state.autogoldPlus * (state.goldPlus * state.reset * state.goldMPlus);
         changeInventory();
         changeUpgrade();
     }, 1000);
 
     setInterval(function () {
-        state.diamond += state.autodiamondPlus * (state.diamondPlus * state.reset);
+        state.diamond += state.autodiamondPlus * (state.diamondPlus * state.reset * state.diamondMPlus);
         changeInventory();
         changeUpgrade();
     }, 1000);
@@ -167,31 +187,31 @@ $(document).ready(function () {
     });
 
     $("#stone").click(function () {
-        state.stone += state.stonePlus * (1 * state.reset);
+        state.stone += state.stonePlus * state.reset * state.stoneMPlus;
         changeInventory();
         changeUpgrade();
     });
 
     $("#iron").click(function () {
-        state.iron += state.ironPlus * (1 * state.reset);
+        state.iron += state.ironPlus * state.reset * state.ironMPlus;
         changeInventory();
         changeUpgrade();
     });
 
     $("#silver").click(function () {
-        state.silver += state.silverPlus * (1 * state.reset);
+        state.silver += state.silverPlus * state.reset * state.silverMPlus;
         changeInventory();
         changeUpgrade();
     });
 
     $("#gold").click(function () {
-        state.gold += state.goldPlus * (1 * state.reset);
+        state.gold += state.goldPlus * state.reset * state.goldMPlus;
         changeInventory();
         changeUpgrade();
     });
 
     $("#diamond").click(function () {
-        state.diamond += state.diamondPlus * (1 * state.reset);
+        state.diamond += state.diamondPlus * state.reset * state.diamondMPlus;
         changeInventory();
         changeUpgrade();
     });
@@ -572,75 +592,75 @@ $(document).ready(function () {
             $("#stone3").tooltip("show");
         }
         else {
-            alert("Not enough dirt")
+            alert("Not enough stone")
             changeInventory();
             changeUpgrade();
         }
     });
 
-    $("#dirt3").click(function () {
-        if (state.dirt >= state.dirtU3Price) {
-            state.dirt -= state.dirtU3Price;
-            state.dirtMPlus *= 2;
-            state.dirtU3Price **= 2;
-            $("#dirt3").tooltip("dispose");
+    $("#iron3").click(function () {
+        if (state.iron >= state.ironU3Price) {
+            state.iron -= state.ironU3Price;
+            state.ironMPlus *= 2;
+            state.ironU3Price **= 2;
+            $("#iron3").tooltip("dispose");
             changeInventory();
             changeUpgrade();
-            $("#dirt3").tooltip("show");
+            $("#iron3").tooltip("show");
         }
         else {
-            alert("Not enough dirt")
+            alert("Not enough iron")
             changeInventory();
             changeUpgrade();
         }
     });
 
-    $("#dirt3").click(function () {
-        if (state.dirt >= state.dirtU3Price) {
-            state.dirt -= state.dirtU3Price;
-            state.dirtMPlus *= 2;
-            state.dirtU3Price **= 2;
-            $("#dirt3").tooltip("dispose");
+    $("#silver3").click(function () {
+        if (state.silver >= state.silverU3Price) {
+            state.silver -= state.silverU3Price;
+            state.silverMPlus *= 2;
+            state.silverU3Price **= 2;
+            $("#silver3").tooltip("dispose");
             changeInventory();
             changeUpgrade();
-            $("#dirt3").tooltip("show");
+            $("#silver3").tooltip("show");
         }
         else {
-            alert("Not enough dirt")
+            alert("Not enough silver")
             changeInventory();
             changeUpgrade();
         }
     });
 
-    $("#dirt3").click(function () {
-        if (state.dirt >= state.dirtU3Price) {
-            state.dirt -= state.dirtU3Price;
-            state.dirtMPlus *= 2;
-            state.dirtU3Price **= 2;
-            $("#dirt3").tooltip("dispose");
+    $("#gold3").click(function () {
+        if (state.gold >= state.goldU3Price) {
+            state.gold -= state.goldU3Price;
+            state.goldMPlus *= 2;
+            state.goldU3Price **= 2;
+            $("#gold3").tooltip("dispose");
             changeInventory();
             changeUpgrade();
-            $("#dirt3").tooltip("show");
+            $("#gold3").tooltip("show");
         }
         else {
-            alert("Not enough dirt")
+            alert("Not enough gold")
             changeInventory();
             changeUpgrade();
         }
     });
 
-    $("#dirt3").click(function () {
-        if (state.dirt >= state.dirtU3Price) {
-            state.dirt -= state.dirtU3Price;
-            state.dirtMPlus *= 2;
-            state.dirtU3Price **= 2;
-            $("#dirt3").tooltip("dispose");
+    $("#diamond3").click(function () {
+        if (state.diamond >= state.diamondU3Price) {
+            state.diamond -= state.diamondU3Price;
+            state.diamondMPlus *= 2;
+            state.diamondU3Price **= 2;
+            $("#diamond3").tooltip("dispose");
             changeInventory();
             changeUpgrade();
-            $("#dirt3").tooltip("show");
+            $("#diamond3").tooltip("show");
         }
         else {
-            alert("Not enough dirt")
+            alert("Not enough diamond")
             changeInventory();
             changeUpgrade();
         }
@@ -655,11 +675,11 @@ $(document).ready(function () {
         $("#diamondc").html("Diamond: " + state.diamond);
 
         $("#dirtautoc").html("Dirt Per Second: " + state.autodirtPlus * (state.dirtPlus * state.reset * state.dirtMPlus));
-        $("#stoneautoc").html("Stone Per Second: " + state.autostonePlus * (state.stonePlus * state.reset));
-        $("#ironautoc").html("Iron Per Second: " + state.autoironPlus * (state.ironPlus * state.reset));
-        $("#silverautoc").html("Silver Per Second: " + state.autosilverPlus * (state.silverPlus * state.reset));
-        $("#goldautoc").html("Gold Per Second: " + state.autogoldPlus * (state.goldPlus * state.reset));
-        $("#diamondautoc").html("Diamond Per Second: " + state.autodiamondPlus * (state.diamondPlus * state.reset));
+        $("#stoneautoc").html("Stone Per Second: " + state.autostonePlus * (state.stonePlus * state.reset * state.stoneMPlus));
+        $("#ironautoc").html("Iron Per Second: " + state.autoironPlus * (state.ironPlus * state.reset * state.ironMPlus));
+        $("#silverautoc").html("Silver Per Second: " + state.autosilverPlus * (state.silverPlus * state.reset * state.silverMPlus));
+        $("#goldautoc").html("Gold Per Second: " + state.autogoldPlus * (state.goldPlus * state.reset * state.goldMPlus));
+        $("#diamondautoc").html("Diamond Per Second: " + state.autodiamondPlus * (state.diamondPlus * state.reset * state.diamondMPlus));
 
         $("#resetc").html("Reset Multiplier: " + state.reset);
         //tooltip stuff
@@ -677,6 +697,11 @@ $(document).ready(function () {
         $("#gold1").attr("title", state.goldUPrice + " Gold").tooltip('_fixTitle');
         $("#diamond1").attr("title", state.diamondUPrice + " Diamond").tooltip('_fixTitle');
         $("#dirt3").attr("title", state.dirtU3Price + " Dirt").tooltip('_fixTitle');
+        $("#stone3").attr("title", state.stoneU3Price + " Stone").tooltip('_fixTitle');
+        $("#iron3").attr("title", state.ironU3Price + " Iron").tooltip('_fixTitle');
+        $("#silver3").attr("title", state.silverU3Price + " Silver").tooltip('_fixTitle');
+        $("#gold3").attr("title", state.goldU3Price + " Gold").tooltip('_fixTitle');
+        $("#diamond3").attr("title", state.diamondU3Price + " Diamond").tooltip('_fixTitle');
     };
 
     function changeUpgrade() {
