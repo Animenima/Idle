@@ -16,11 +16,11 @@ $(document).ready(function () {
         silver: 0,
         gold: 0,
         diamond: 0,
+        dirtunlock: 0,
         stoneunlock: 0,
         ironunlock: 0,
         silverunlock: 0,
         goldunlock: 0,
-        diamondunlock: 0,
         dirtPlus: 1,
         stonePlus: 1,
         ironPlus: 1,
@@ -75,11 +75,11 @@ $(document).ready(function () {
         silver: 0,
         gold: 0,
         diamond: 0,
+        dirtunlock: 0,
         stoneunlock: 0,
         ironunlock: 0,
         silverunlock: 0,
         goldunlock: 0,
-        diamondunlock: 0,
         dirtPlus: 1,
         stonePlus: 1,
         ironPlus: 1,
@@ -180,144 +180,58 @@ $(document).ready(function () {
         changeUpgrade();
     }, 1000);
 
-    $("#dirt").click(function () {
-        state.dirt += state.dirtPlus * state.reset * state.dirtMPlus;
+    //Resource buttons
+    $("#dirt, #stone, #iron, #silver, #gold, #diamond").click(function () {
+        var id = $(this).attr("id");
+        switch (id) {
+            case "dirt":
+                state.dirt += state.dirtPlus * state.reset * state.dirtMPlus;
+                break;
+            case "stone":
+                state.stone += state.stonePlus * state.reset * state.stoneMPlus;
+                break;
+            case "iron":
+                state.iron += state.ironPlus * state.reset * state.ironMPlus;
+                break;
+            case "silver":
+                state.silver += state.silverPlus * state.reset * state.silverMPlus;
+                break;
+            case "gold":
+                state.gold += state.goldPlus * state.reset * state.goldMPlus;
+                break;
+            case "diamond":
+                state.diamond += state.diamondPlus * state.reset * state.diamondMPlus;
+                break;
+            default:
+                break;
+        }
         changeInventory();
         changeUpgrade();
     });
 
-    $("#stone").click(function () {
-        state.stone += state.stonePlus * state.reset * state.stoneMPlus;
-        changeInventory();
-        changeUpgrade();
-    });
+    //Autogethering buttons
+    $("#dirtauto, #stoneauto, #ironauto, #silverauto, #goldauto, #diamondauto").click(function () {
+        var id = $(this).attr("id").replace("auto", "");
+        var resource = state[id];
+        var autoPrice = state["auto" + id + "Price"];
+        var autoPlus = state["auto" + id + "Plus"];
 
-    $("#iron").click(function () {
-        state.iron += state.ironPlus * state.reset * state.ironMPlus;
-        changeInventory();
-        changeUpgrade();
-    });
-
-    $("#silver").click(function () {
-        state.silver += state.silverPlus * state.reset * state.silverMPlus;
-        changeInventory();
-        changeUpgrade();
-    });
-
-    $("#gold").click(function () {
-        state.gold += state.goldPlus * state.reset * state.goldMPlus;
-        changeInventory();
-        changeUpgrade();
-    });
-
-    $("#diamond").click(function () {
-        state.diamond += state.diamondPlus * state.reset * state.diamondMPlus;
-        changeInventory();
-        changeUpgrade();
-    });
-
-    $("#dirtauto").click(function () {
-        if (state.dirt >= state.autodirtPrice) {
-            state.dirt -= state.autodirtPrice;
-            state.autodirtPlus++;
-            state.autodirtPrice *= 2;
-            $("#dirtauto").tooltip("dispose");
+        if (resource >= autoPrice) {
+            state[id] -= autoPrice;
+            state["auto" + id + "Plus"]++;
+            state["auto" + id + "Price"] *= 2;
+            $("#" + id + "auto").tooltip("dispose");
             changeInventory();
             changeUpgrade();
-            $("#dirtauto").tooltip("show");
-        }
-        else {
-            alert("Not enough dirt")
+            $("#" + id + "auto").tooltip("show");
+        } else {
+            alert("Not enough " + id);
             changeInventory();
             changeUpgrade();
         }
     });
 
-    $("#stoneauto").click(function () {
-        if (state.stone >= state.autostonePrice) {
-            state.stone -= state.autostonePrice;
-            state.autostonePlus++;
-            state.autostonePrice *= 2;
-            $("#stoneauto").tooltip("dispose");
-            changeInventory();
-            changeUpgrade();
-            $("#stoneauto").tooltip("show");
-        }
-        else {
-            alert("Not enough stone")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
-
-    $("#ironauto").click(function () {
-        if (state.iron >= state.autoironPrice) {
-            state.iron -= state.autoironPrice;
-            state.autoironPlus++;
-            state.autoironPrice *= 2;
-            $("#ironauto").tooltip("dispose");
-            changeInventory();
-            changeUpgrade();
-            $("#ironauto").tooltip("show");
-        }
-        else {
-            alert("Not enough iron")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
-
-    $("#silverauto").click(function () {
-        if (state.silver >= state.autosilverPrice) {
-            state.silver -= state.autosilverPrice;
-            state.autosilverPlus++;
-            state.autosilverPrice *= 2;
-            $("#silverauto").tooltip("dispose");
-            changeInventory();
-            changeUpgrade();
-            $("#silverauto").tooltip("show");
-        }
-        else {
-            alert("Not enough silver")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
-
-    $("#goldauto").click(function () {
-        if (state.gold >= state.autogoldPrice) {
-            state.gold -= state.autogoldPrice;
-            state.autogoldPlus++;
-            state.autogoldPrice *= 2;
-            $("#goldauto").tooltip("dispose");
-            changeInventory();
-            changeUpgrade();
-            $("#goldauto").tooltip("show");
-        }
-        else {
-            alert("Not enough gold")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
-
-    $("#diamondauto").click(function () {
-        if (state.diamond >= state.autodiamondPrice) {
-            state.diamond -= state.autodiamondPrice;
-            state.autodiamondPlus++;
-            state.autodiamondPrice *= 2;
-            $("#diamonauto").tooltip("dispose");
-            changeInventory();
-            changeUpgrade();
-            $("#diamondauto").tooltip("show");
-        }
-        else {
-            alert("Not enough diamonds")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
-
+    //First upgrade buttons
     $("#dirt1").click(function () {
         if (state.dirt >= state.dirtUPrice) {
             state.dirt -= state.dirtUPrice;
@@ -335,165 +249,47 @@ $(document).ready(function () {
         }
     });
 
-    $("#stone1").click(function () {
-        if (state.stone >= state.stoneUPrice) {
-            state.stone -= state.stoneUPrice;
-            state.stonePlus *= 2;
-            state.stoneUPrice *= 2;
-            $("#stone1").tooltip("dispose");
-            changeInventory();
-            changeUpgrade();
-            $("#stone1").tooltip("show");
-        }
-        else {
-            alert("Not enough stone")
-            changeInventory();
-            changeUpgrade();
-        }
+    //Upgrade 1
+    $("#stone1, #iron1, #silver1, #gold1, #diamond1").click(function () {
+        var id = $(this).attr("id").replace("1", "");
+        upgradeResource(id, state[id], state[id + "UPrice"], state[id + "Plus"], state[id + "UPrice"]);
     });
 
-    $("#iron1").click(function () {
-        if (state.iron >= state.ironUPrice) {
-            state.iron -= state.ironUPrice;
-            state.ironPlus *= 2;
-            state.ironUPrice *= 2;
-            $("#iron1").tooltip("dispose");
+    function upgradeResource(resource, currentResource, price, plus, uPrice) {
+        if (currentResource >= price) {
+            state[resource] -= price;
+            state[resource + "Plus"] *= 2;
+            state[resource + "UPrice"] *= 2;
+            $("#" + resource + "1").tooltip("dispose");
             changeInventory();
             changeUpgrade();
-            $("#iron1").tooltip("show");
-        }
-        else {
-            alert("Not enough iron")
+            $("#" + resource + "1").tooltip("show");
+        } else {
+            alert("Not enough " + resource);
             changeInventory();
             changeUpgrade();
         }
+    };
+
+    //Unlocks
+    $("#dirt2, #stone2, #iron2, #silver2, #gold2").click(function () {
+        var id = $(this).attr("id").replace(/[0-9]/g, "");
+        unlockResource(id, state[id], state[id + "U2Price"], id + "unlock");
     });
 
-    $("#silver1").click(function () {
-        if (state.silver >= state.silverUPrice) {
-            state.silver -= state.silverUPrice;
-            state.silverPlus *= 2;
-            state.silverUPrice *= 2;
-            $("#silver1").tooltip("dispose");
+    function unlockResource(resource, currentResource, price, unlock) {
+        if (currentResource >= price) {
+            state[resource] -= price;
+            state[unlock]++;
+            $("#" + resource + "2").addClass("invisible");
             changeInventory();
             changeUpgrade();
-            $("#silver1").tooltip("show");
-        }
-        else {
-            alert("Not enough silver")
+        } else {
+            alert("Not enough " + resource);
             changeInventory();
             changeUpgrade();
         }
-    });
-
-    $("#gold1").click(function () {
-        if (state.gold >= state.goldUPrice) {
-            state.gold -= state.goldUPrice;
-            state.goldPlus *= 2;
-            state.goldUPrice *= 2;
-            $("#gold1").tooltip("dispose");
-            changeInventory();
-            changeUpgrade();
-            $("#gold1").tooltip("show");
-        }
-        else {
-            alert("Not enough gold")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
-
-    $("#diamond1").click(function () {
-        if (state.diamond >= state.diamondUPrice) {
-            state.diamond -= state.diamondUPrice;
-            state.diamondPlus *= 2;
-            state.diamondUPrice *= 2;
-            $("#diamond1").tooltip("dispose");
-            changeInventory();
-            changeUpgrade();
-            $("#diamond1").tooltip("show");
-        }
-        else {
-            alert("Not enough diamonds")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
-
-    $("#dirt2").click(function () {
-        if (state.dirt >= state.dirtU2Price) {
-            state.dirt -= state.dirtU2Price;
-            state.stoneunlock++;
-            $("#dirt2").addClass("invisible");
-            changeInventory();
-            changeUpgrade();
-        }
-        else {
-            alert("Not enough dirt")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
-
-    $("#stone2").click(function () {
-        if (state.stone >= state.stoneU2Price) {
-            state.stone -= state.stoneU2Price;
-            state.ironunlock++;
-            $("#stone2").addClass("invisible");
-            changeInventory();
-            changeUpgrade();
-        }
-        else {
-            alert("Not enough stone")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
-
-    $("#iron2").click(function () {
-        if (state.iron >= state.ironU2Price) {
-            state.iron -= state.ironU2Price;
-            state.silverunlock++;
-            $("#iron2").addClass("invisible");
-            changeInventory();
-            changeUpgrade();
-        }
-        else {
-            alert("Not enough iron")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
-
-    $("#silver2").click(function () {
-        if (state.silver >= state.silverU2Price) {
-            state.silver -= state.silverU2Price;
-            state.goldunlock++;
-            $("#silver2").addClass("invisible");
-            changeInventory();
-            changeUpgrade();
-        }
-        else {
-            alert("Not enough silver")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
-
-    $("#gold2").click(function () {
-        if (state.gold >= state.goldU2Price) {
-            state.gold -= state.goldU2Price;
-            state.diamondunlock++;
-            $("#gold2").addClass("invisible");
-            changeInventory();
-            changeUpgrade();
-        }
-        else {
-            alert("Not enough gold")
-            changeInventory();
-            changeUpgrade();
-        }
-    });
+    };
 
     $("#diamond2").click(function () {
         if (state.diamond >= state.diamondU2Price) {
@@ -526,7 +322,7 @@ $(document).ready(function () {
             state.ironunlock = defaultstate.ironunlock;
             state.silverunlock = defaultstate.silverunlock;
             state.goldunlock = defaultstate.goldunlock;
-            state.diamondunlock = defaultstate.diamondunlock;
+            state.dirtunlock = defaultstate.dirtunlock;
             state.autodirtPlus = defaultstate.autodirtPlus;
             state.autostonePlus = defaultstate.autostonePlus;
             state.autoironPlus = defaultstate.autoironPlus;
@@ -705,138 +501,80 @@ $(document).ready(function () {
     };
 
     function changeUpgrade() {
-        if (state.dirt >= state.autodirtPrice) {
-            $("#dirtauto").removeClass("invisible");
-        } else {
-            $("#dirtauto").addClass("invisible");
-        }
+        //Autogather visibility
+        $("#dirtauto").toggleClass("invisible", !(state.dirt >= state.autodirtPrice));
+        $("#stoneauto").toggleClass("invisible", !(state.stone >= state.autostonePrice));
+        $("#ironauto").toggleClass("invisible", !(state.iron >= state.autoironPrice));
+        $("#silverauto").toggleClass("invisible", !(state.silver >= state.autosilverPrice));
+        $("#goldauto").toggleClass("invisible", !(state.gold >= state.autogoldPrice));
+        $("#diamondauto").toggleClass("invisible", !(state.diamond >= state.autodiamondPrice));
 
-        if (state.stone >= state.autostonePrice) {
-            $("#stoneauto").removeClass("invisible");
-        } else {
-            $("#stoneauto").addClass("invisible");
-        }
 
-        if (state.iron >= state.autoironPrice) {
-            $("#ironauto").removeClass("invisible");
-        } else {
-            $("#ironauto").addClass("invisible");
-        }
+        ["dirt", "stone", "iron", "silver", "gold", "diamond"].forEach(function(resource) {
+            $("#" + resource + "1").toggleClass("invisible", !(state[resource] >= state[resource + "UPrice"]));
+        });
 
-        if (state.silver >= state.autosilverPrice) {
-            $("#silverauto").removeClass("invisible");
-        } else {
-            $("#silverauto").addClass("invisible");
-        }
-
-        if (state.gold >= state.autogoldPrice) {
-            $("#goldauto").removeClass("invisible");
-        } else {
-            $("#goldauto").addClass("invisible");
-        }
-
-        if (state.diamond >= state.autodiamondPrice) {
-            $("#diamondauto").removeClass("invisible");
-        } else {
-            $("#diamondauto").addClass("invisible");
-        }
-
-        if (state.dirt >= state.dirtUPrice) {
-            $("#dirt1").removeClass("invisible");
-        } else {
-            $("#dirt1").addClass("invisible");
-        }
-
-        if (state.stone >= state.stoneUPrice) {
-            $("#stone1").removeClass("invisible");
-        } else {
-            $("#stone1").addClass("invisible");
-        }
-
-        if (state.iron >= state.ironUPrice) {
-            $("#iron1").removeClass("invisible");
-        } else {
-            $("#iron1").addClass("invisible");
-        }
-
-        if (state.silver >= state.silverUPrice) {
-            $("#silver1").removeClass("invisible");
-        } else {
-            $("#silver1").addClass("invisible");
-        }
-
-        if (state.gold >= state.goldUPrice) {
-            $("#gold1").removeClass("invisible");
-        } else {
-            $("#gold1").addClass("invisible");
-        }
-
-        if (state.diamond >= state.diamondUPrice) {
-            $("#diamond1").removeClass("invisible");
-        } else {
-            $("#diamond1").addClass("invisible");
-        }
-
-        if (state.stoneunlock <= 0) {
+        if (state.dirtunlock <= 0) {
             $("#stone").addClass("invisible");
         } else {
             $("#stone").removeClass("invisible");
             $("#dirt2").addClass("invisible");
         }
 
-        if (state.ironunlock <= 0) {
+        if (state.stoneunlock <= 0) {
             $("#iron").addClass("invisible");
         } else {
             $("#iron").removeClass("invisible");
             $("#stone2").addClass("invisible");
         }
 
-        if (state.silverunlock <= 0) {
+        if (state.ironunlock <= 0) {
             $("#silver").addClass("invisible");
         } else {
             $("#silver").removeClass("invisible");
             $("#iron2").addClass("invisible");
         }
 
-        if (state.goldunlock <= 0) {
+        if (state.silverunlock <= 0) {
             $("#gold").addClass("invisible");
         } else {
             $("#gold").removeClass("invisible");
             $("#silver2").addClass("invisible");
         }
 
-        if (state.diamondunlock <= 0) {
+        if (state.goldunlock <= 0) {
             $("#diamond").addClass("invisible");
         } else {
             $("#diamond").removeClass("invisible");
             $("#gold2").addClass("invisible");
         }
 
-        if (state.dirt >= state.dirtU2Price && state.stoneunlock == 0) {
+        //Second Upgrade Visibility
+        if (state.dirt >= state.dirtU2Price && state.dirtunlock == 0) {
             $("#dirt2").removeClass("invisible");
         } else {
             $("#dirt2").addClass("invisible");
         }
 
-        if (state.stone >= state.stoneU2Price && state.ironunlock == 0) {
+        if (state.stone >= state.stoneU2Price && state.stoneunlock == 0) {
             $("#stone2").removeClass("invisible");
         } else {
             $("#stone2").addClass("invisible");
         }
 
-        if (state.iron >= state.ironU2Price && state.silverunlock == 0) {
+        if (state.iron >= state.ironU2Price && state.ironunlock == 0) {
             $("#iron2").removeClass("invisible");
         } else {
             $("#iron2").addClass("invisible");
         }
 
-        if (state.silver >= state.silverU2Price && state.goldunlock == 0) {
+        if (state.silver >= state.silverU2Price && state.silverunlock == 0) {
             $("#silver2").removeClass("invisible");
         } else {
             $("#silver2").addClass("invisible");
         }
 
-        if (state.gold >= state.goldU2Price && state.diamondunlock == 0) {
+        if (state.gold >= state.goldU2Price && state.goldunlock == 0) {
             $("#gold2").removeClass("invisible");
         } else {
             $("#gold2").addClass("invisible");
@@ -852,41 +590,12 @@ $(document).ready(function () {
             $("#resetc").removeClass("invisible");
         }
 
-        if (state.dirt > state.dirtU3Price) {
-            $("#dirt3").removeClass("invisible");
-        } else {
-            $("#dirt3").addClass("invisible");
-        }
+        //Third Upgrade Visibility
+        var resources = ["dirt", "stone", "iron", "silver", "gold", "diamond"];
 
-        if (state.stone > state.stoneU3Price) {
-            $("#stone3").removeClass("invisible");
-        } else {
-            $("#stone3").addClass("invisible");
-        }
-
-        if (state.iron > state.ironU3Price) {
-            $("#iron3").removeClass("invisible");
-        } else {
-            $("#iron3").addClass("invisible");
-        }
-
-        if (state.silver > state.silverU3Price) {
-            $("#silver3").removeClass("invisible");
-        } else {
-            $("#silver3").addClass("invisible");
-        }
-
-        if (state.gold > state.goldU3Price) {
-            $("#gold3").removeClass("invisible");
-        } else {
-            $("#gold3").addClass("invisible");
-        }
-
-        if (state.diamond > state.diamondU3Price) {
-            $("#diamond3").removeClass("invisible");
-        } else {
-            $("#diamond3").addClass("invisible");
-        }
+        resources.forEach(function(resource) {
+            $("#" + resource + "3").toggleClass("invisible", !(state[resource] > state[resource + "U3Price"]));
+        });
 
 
     };
