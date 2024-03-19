@@ -509,11 +509,12 @@ $(document).ready(function () {
         $("#goldauto").toggleClass("invisible", !(state.gold >= state.autogoldPrice));
         $("#diamondauto").toggleClass("invisible", !(state.diamond >= state.autodiamondPrice));
 
-
+        //First Upgrade Visibility
         ["dirt", "stone", "iron", "silver", "gold", "diamond"].forEach(function(resource) {
             $("#" + resource + "1").toggleClass("invisible", !(state[resource] >= state[resource + "UPrice"]));
         });
 
+        //Unlock Visibility
         if (state.dirtunlock <= 0) {
             $("#stone").addClass("invisible");
         } else {
