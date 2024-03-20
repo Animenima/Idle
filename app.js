@@ -146,35 +146,10 @@ $(document).ready(function () {
 
     setInterval(function () {
         state.dirt += state.autodirtPlus * (state.dirtPlus * state.reset * state.dirtMPlus);
-        changeInventory();
-        changeUpgrade();
-    }, 1000);
-
-    setInterval(function () {
         state.stone += state.autostonePlus * (state.stonePlus * state.reset * state.stoneMPlus);
-        changeInventory();
-        changeUpgrade();
-    }, 1000);
-
-    setInterval(function () {
         state.iron += state.autoironPlus * (state.ironPlus * state.reset * state.ironMPlus);
-        changeInventory();
-        changeUpgrade();
-    }, 1000);
-
-    setInterval(function () {
         state.silver += state.autosilverPlus * (state.silverPlus * state.reset * state.silverMPlus);
-        changeInventory();
-        changeUpgrade();
-    }, 1000);
-
-    setInterval(function () {
         state.gold += state.autogoldPlus * (state.goldPlus * state.reset * state.goldMPlus);
-        changeInventory();
-        changeUpgrade();
-    }, 1000);
-
-    setInterval(function () {
         state.diamond += state.autodiamondPlus * (state.diamondPlus * state.reset * state.diamondMPlus);
         changeInventory();
         changeUpgrade();
@@ -510,7 +485,7 @@ $(document).ready(function () {
         $("#diamondauto").toggleClass("invisible", !(state.diamond >= state.autodiamondPrice));
 
         //First Upgrade Visibility
-        ["dirt", "stone", "iron", "silver", "gold", "diamond"].forEach(function(resource) {
+        ["dirt", "stone", "iron", "silver", "gold", "diamond"].forEach(function (resource) {
             $("#" + resource + "1").toggleClass("invisible", !(state[resource] >= state[resource + "UPrice"]));
         });
 
@@ -594,7 +569,7 @@ $(document).ready(function () {
         //Third Upgrade Visibility
         var resources = ["dirt", "stone", "iron", "silver", "gold", "diamond"];
 
-        resources.forEach(function(resource) {
+        resources.forEach(function (resource) {
             $("#" + resource + "3").toggleClass("invisible", !(state[resource] > state[resource + "U3Price"]));
         });
 
